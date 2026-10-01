@@ -1,0 +1,10 @@
+bin/
+obj/
+/Release/
+*.user
+__pycache__/
+
+/skills/dist/
+
+# SOAP recording (ALTIUM_SOAP_TRACE) contains a real session identifier
+/soap-trace*/

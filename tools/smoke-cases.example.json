@@ -1,0 +1,117 @@
+[
+  {
+    "name": "status",
+    "tool": "vault_status",
+    "arguments": {}
+  },
+  {
+    "name": "folders: top levels",
+    "tool": "vault_folders",
+    "arguments": {},
+    "maxChars": 8000
+  },
+  {
+    "name": "folder types",
+    "tool": "vault_folder_types",
+    "arguments": {}
+  },
+  {
+    "name": "content types",
+    "tool": "vault_content_types",
+    "arguments": {}
+  },
+  {
+    "name": "components: type tree",
+    "tool": "vault_components",
+    "arguments": {},
+    "maxChars": 6000
+  },
+  {
+    "name": "components: overview without a type",
+    "tool": "vault_components",
+    "arguments": {
+      "action": "overview"
+    }
+  },
+  {
+    "name": "trash: first page",
+    "tool": "vault_restore_items",
+    "arguments": {
+      "action": "list",
+      "limit": 20
+    }
+  },
+  {
+    "name": "audit: count",
+    "tool": "vault_audit",
+    "arguments": {
+      "count": 5
+    }
+  },
+  {
+    "name": "apply status: nothing deferred",
+    "tool": "vault_apply_status",
+    "arguments": {}
+  },
+  {
+    "name": "plan show: no plan",
+    "tool": "vault_plan",
+    "arguments": {
+      "action": "show"
+    }
+  },
+  {
+    "name": "plan approve: unknown token - refusal",
+    "tool": "vault_plan",
+    "arguments": {
+      "action": "approve",
+      "planToken": "no-such-token"
+    },
+    "expectError": true
+  },
+  {
+    "name": "table: a folder that does not exist - refusal with a hint",
+    "tool": "vault_table",
+    "arguments": {
+      "folder": "No Such Folder",
+      "limit": 3
+    },
+    "expectError": true
+  },
+  {
+    "name": "set_links: an unknown role - refusal listing the allowed ones",
+    "tool": "vault_set_links",
+    "arguments": {
+      "components": ["CMP-0001"],
+      "links": [{"role": "model", "target": "PCC-0001"}],
+      "dryRun": true
+    },
+    "expectError": true
+  },
+  {
+    "name": "EXAMPLE, fill in your own: part card",
+    "skip": true,
+    "tool": "vault_component_detail",
+    "arguments": {
+      "component": "CMP-0001"
+    }
+  },
+  {
+    "name": "EXAMPLE, fill in your own: dry run of a copy into a test folder",
+    "skip": true,
+    "tool": "vault_copy_components",
+    "arguments": {
+      "source": "CMP-0001",
+      "copies": [
+        {
+          "comment": "smoke",
+          "parameters": {
+            "Manufacturer Part Number": "SMOKE-0001"
+          }
+        }
+      ],
+      "targetFolder": "TEST-FOLDER",
+      "dryRun": true
+    }
+  }
+]

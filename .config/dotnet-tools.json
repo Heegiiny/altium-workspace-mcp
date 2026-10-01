@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "isRoot": true,
+  "tools": {
+    "dotnet-svcutil": {
+      "version": "2.2.0-preview1.23462.5",
+      "commands": [
+        "dotnet-svcutil"
+      ],
+      "rollForward": false
+    }
+  }
+}
