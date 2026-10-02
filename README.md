@@ -10,6 +10,8 @@ Altium itself uses.
 This is an unofficial project: it is not affiliated with, endorsed or supported by Altium.
 "Altium" is a trademark of its owner.
 
+Works best with https://github.com/embedded-society/altium-designer-mcp. This MCP serves the Vault path and altium-designer-mcp is used to create and edit the parts.
+
 ## What it can do
 
 | Tool | Purpose |
